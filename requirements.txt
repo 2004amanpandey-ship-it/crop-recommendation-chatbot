@@ -1,0 +1,7 @@
+Django
+openai
+python-dotenv
+numpy==2.0.2
+scikit-learn==1.6.1
+pandas
+gunicorn
