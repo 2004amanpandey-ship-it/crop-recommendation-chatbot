@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="notice-wrapper">
+
+    <h2 class="notice-heading">🌾 Government Notices</h2>
+
+    <!-- 🔍 SEARCH BAR -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search notices...">
+    </div>
+
+    <div class="notice-grid">
+
+        {% for n in notices %}
+        <div class="notice-card {% if forloop.first %}latest{% endif %}">
+
+            <div class="notice-top">
+                <h3 class="notice-title">{{ n.title }}</h3>
+                <span class="badge">NEW</span>
+            </div>
+
+            <p class="notice-desc">
+                {{ n.description|truncatewords:25 }}
+            </p>
+
+            <div class="notice-bottom">
+                <span class="date">📅 {{ n.date }}</span>
+
+                {% if n.link %}
+                <a href="{{ n.link }}" target="_blank" class="view-btn">
+                    View Details →
+                </a>
+                {% endif %}
+            </div>
+
+        </div>
+        {% empty %}
+        <p class="no-notice">No notices available</p>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<!-- 🔥 SEARCH SCRIPT -->
+<script>
+document.getElementById("searchInput").addEventListener("keyup", function() {
+    let value = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".notice-card");
+
+    cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? "block" : "none";
+    });
+});
+</script>
+
+{% endblock %}

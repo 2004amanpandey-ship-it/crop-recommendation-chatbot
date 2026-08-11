@@ -1,0 +1,249 @@
+/* ================= GLOBAL ================= */
+
+body {
+    background: linear-gradient(to right, #f1f8f4, #e8f5e9);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.card { border-radius: 1rem; }
+.btn  { border-radius: .8rem; }
+
+.alert code {
+    background:#f7f7f7;
+    padding:.1rem .35rem;
+    border-radius:.35rem;
+}
+
+/* ================= HERO / FOOTER ================= */
+
+.hero-gradient{
+  background: linear-gradient(135deg, #2e7d32, #66bb6a);
+}
+
+.footer-gradient{
+  background: linear-gradient(135deg, #1b5e20, #388e3c);
+}
+
+/* ================= STATS ================= */
+
+.stat-tile{
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 1rem;
+  padding: .8rem 1rem;
+  color: #fff;
+}
+
+.stat-kicker{ font-size: .85rem; opacity: .8; }
+
+.stat-value{
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ================= ICON ================= */
+
+.icon-badge{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(46,125,50,.1);
+  color: #2e7d32;
+}
+
+/* ================= STEPS ================= */
+
+.step .step-num{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e8f5e9;
+  color:#2e7d32;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 700;
+}
+
+/* ================= NOTICE PAGE ================= */
+
+/* 🔥 FULL WIDTH FIX */
+.notice-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* Heading */
+.notice-heading {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #1b5e20, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 🔥 GRID FIX (4 cards possible) */
+.notice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+/* CARD */
+.notice-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.35s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🔥 TOP BORDER EFFECT */
+.notice-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+}
+
+/* Hover */
+.notice-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+/* TOP */
+.notice-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notice-top h3 {
+    font-size: 18px;
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+/* BADGE */
+.badge {
+    background: #ff5252;
+    color: white;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* DESCRIPTION */
+.notice-desc {
+    margin: 14px 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* BOTTOM */
+.notice-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* DATE */
+.date {
+    font-size: 13px;
+    color: #777;
+}
+
+/* BUTTON */
+.view-btn {
+    text-decoration: none;
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    box-shadow: 0 4px 12px rgba(46,125,50,0.3);
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: linear-gradient(135deg, #1b5e20, #43a047);
+    transform: scale(1.05);
+}
+
+/* EMPTY */
+.no-notice {
+    text-align: center;
+    color: #888;
+    font-size: 16px;
+}
+/* ================= SEARCH BAR ================= */
+
+.search-box {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-box input {
+    width: 40%;
+    max-width: 400px;
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+    background: white;
+}
+
+.search-box input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 10px rgba(46,125,50,0.3);
+}
+
+/* ================= LATEST NOTICE ================= */
+
+.notice-card.latest {
+    border: 2px solid #66bb6a;
+    transform: scale(1.02);
+    box-shadow: 0 15px 30px rgba(46,125,50,0.2);
+}
+
+/* ================= BETTER CARD SPACING ================= */
+
+.notice-title {
+    margin: 0;
+    flex: 1;
+    padding-right: 10px;
+}
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width: 768px) {
+    .search-box input {
+        width: 90%;
+    }
+}
